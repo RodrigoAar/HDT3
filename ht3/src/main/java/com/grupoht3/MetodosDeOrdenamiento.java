@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class MetodosDeOrdenamiento {
     public MetodosDeOrdenamiento() { }
@@ -132,5 +133,14 @@ public class MetodosDeOrdenamiento {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
+    }
+
+    public static int[] generateRandomArray(int size, int min, int max) {
+        int[] arr = new int[size];
+        Random rand = new Random();
+        for (int i = 0; i < size; i++) {
+            arr[i] = rand.nextInt((max - min) + 1) + min;
+        }
+        return arr;
     }
 }
